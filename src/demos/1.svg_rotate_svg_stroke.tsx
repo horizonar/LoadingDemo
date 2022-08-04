@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css, keyframes } from "@emotion/react";
-import styled from "@emotion/styled";
 import {
   DEFAULT_COLOR,
   DEFAULT_SIZE,
@@ -28,15 +27,13 @@ const kfStrokeLength = keyframes`
 }
 `;
 
-export default () => {
+export const LoadingSVG = ({ className }: { className?: string }) => {
   return (
     <svg
+      className={className}
       width={size}
       height={size}
       viewBox={`0 0 ${size} ${size}`}
-      css={css`
-        animation: ${kfRotate} 1.2s linear infinite;
-      `}
     >
       <circle
         cx={size / 2}
@@ -54,5 +51,15 @@ export default () => {
         `}
       />
     </svg>
+  );
+};
+
+export default () => {
+  return (
+    <LoadingSVG
+      css={css`
+        animation: ${kfRotate} 1.2s linear infinite;
+      `}
+    />
   );
 };

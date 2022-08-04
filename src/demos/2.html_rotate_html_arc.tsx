@@ -4,18 +4,10 @@ import styled from "@emotion/styled";
 import {
   colors,
   DEFAULT_COLOR,
-  DEFAULT_SIZE,
   DEFAULT_STROKE_WIDTH,
   kfRotate,
 } from "./constants";
-
-const Container = styled.div<{
-  size?: number;
-}>(({ size = DEFAULT_SIZE }) => ({
-  position: "relative",
-  width: size,
-  height: size,
-}));
+import { Container } from "./shared";
 
 const Arc = styled.div<{ strokeWidth?: number; color?: string }>(
   ({ strokeWidth = DEFAULT_STROKE_WIDTH, color = DEFAULT_COLOR }) => ({
